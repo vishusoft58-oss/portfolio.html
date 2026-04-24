@@ -1,0 +1,73 @@
+<style>
+    body {
+        background-color: lightpink;
+        font-family: Arial;
+        text-align: center;
+    }
+
+    .registration {
+        background-color: pink;
+        width: 60%;
+        margin: 40px auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        color: darkred;
+    }
+
+    form {
+        text-align: left;
+    }
+
+    label {
+        color: darkred;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0 15px 0;
+        border: 1px solid red;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        border: none;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: darkred;
+    }
+</style>
+
+<div class="registration">
+    <h1>Student Registration Form</h1>
+
+    <form>
+        <label><strong>Name:</strong></label><br>
+        <input type="text" placeholder="Enter your name">
+
+        <label><strong>Email:</strong></label><br>
+        <input type="email" placeholder="your@email.com">
+
+        <label><strong>Class:</strong></label><br>
+        <select>
+            <option>10A</option>
+            <option>10B</option>
+            <option>10C</option>
+            <option>11A</option>
+        </select>
+
+        <label><strong>Subject:</strong></label><br>
+        <input type="text" placeholder="Maths/Science">
+
+        <button type="submit">Submit Form</button>
+    </form>
+</div>
