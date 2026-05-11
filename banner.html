@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fast Graphic UI Banner</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #dd8888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .banner {
+            width: 1000px;
+            height: 600px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(219, 174, 174, 0.7);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;  /* Faster fade */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Image 1 */
+        .slide1 {
+            background-image: url('https://images.pexels.com/photos/37290569/pexels-photo-37290569.jpeg');
+            animation: fastSlide 8s infinite;  /* 8s total = 2s per image */
+        }
+
+        /* Image 2 */
+        .slide2 {
+            background-image: url('https://images.pexels.com/photos/36081465/pexels-photo-36081465.jpeg');
+            animation: fastSlide 8s infinite 2s;
+        }
+
+        /* Image 3 */
+        .slide3 {
+            background-image: url('https://images.pexels.com/photos/11780441/pexels-photo-11780441.jpeg');
+            animation: fastSlide 8s infinite 4s;
+        }
+
+        /* Image 4 */
+        .slide4 {
+            background-image: url('https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg');
+            animation: fastSlide 8s infinite 6s;
+        }
+
+        @keyframes fastSlide {
+            0%, 24.99% { opacity: 0; }
+            25%, 49.99% { opacity: 1; }
+            50%, 74.99% { opacity: 0; }
+            75%, 99.99% { opacity: 1; }
+        }
+
+        .text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background: rgba(0,0,0,0.8);
+            padding: 10px;
+            border-radius: 8px;
+            font-family: Arial;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="slide slide1"></div>
+        <div class="slide slide2"></div>
+        <div class="slide slide3"></div>
+        <div class="slide slide4"></div>
+        
+        <div class="text">
+            <h2>Slideshow</h2>
+        </div>
+    </div>
+</body>
+</html>
