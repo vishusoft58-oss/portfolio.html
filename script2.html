@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <header>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js">
+
+        </script>
+    </header>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        * {
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        h1 {
+            color: rgb(178, 206, 230)
+        }
+
+        #my {
+            color: antiquewhite;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .pic {
+            width: 20%;
+        }
+
+        .text {
+            color: bisque;
+            padding: 20px;
+            text-align: justify;
+        }
+    </style>
+
+</head>
+
+<body>
+    <img src="https://cdn.pixabay.com/photo/2023/08/09/19/47/ai-generated-8180209_1280.jpg" width="100%">
+
+    <button id="b1"> show hide heading </button>
+    <h1 id="welcome to jquery"></h1>
+    <h1>About Jquery</h1>
+    <p class="text" >
+    
+      
+ jQuery is a lightweight, "write less, do more", JavaScript library.
+
+The purpose of jQuery is to make it much easier to use JavaScript on your website.
+
+jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.
+
+jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+
+The jQuery library contains the following features:
+<br></br>
+
+HTML/DOM manipulation
+<br></br>
+CSS manipulation
+<br></br>
+HTML event methods
+<br></br>
+Effects and animations
+<br></br>
+AJAX
+<br></br>
+Utilities
+
+Tip: In addition, jQuery has plugins for almost any task out there.
+</p>
+
+<script>
+
+$(document).ready(function () {
+
+    $("#b1").click(function () {
+        $(".my").toggle("fast");
+    });
+
+    $(".text").mouseenter(function () {
+        $(this).css({
+            "transition": "2s",
+            "color": "purple",
+            "background": "pink"
+        });
+    });
+
+    $(".text").mouseleave(function () {
+        $(this).css({
+            "transition": "2s",
+            "color": "black",
+            "background": "white"
+        });
+    });
+
+});
+</script>
+
+
+
+</body>
+
+</html>

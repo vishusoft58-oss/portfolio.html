@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion using jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            background:#f4f4f4;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #about{
+            width:90%;
+            margin:30px auto;
+            background:white;
+            box-shadow:0 0 10px gray;
+            padding:20px;
+        }
+
+        h1{
+            background:blueviolet;
+            color:white;
+            padding:12px;
+            cursor:pointer;
+            border-radius:5px;
+        }
+
+        p{
+            text-align:justify;
+            padding:15px;
+            line-height:28px;
+        }
+
+        #aboutsub,
+        #productsub,
+        #servicessub,
+        #datasub{
+            display:none;
+            background:#fafafa;
+            border-left:5px solid blueviolet;
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="about">
+
+    <!-- About -->
+    <h1 id="col1">About Us</h1>
+
+    <div id="aboutsub">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Asperiores dignissimos consequatur beatae voluptatem.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quidem, recusandae. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Nulla, sunt.
+        </p>
+    </div>
+
+    <!-- Product -->
+    <h1 id="col2">Product</h1>
+
+    <div id="productsub">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam ipsa architecto sint voluptatem saepe neque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Pariatur, dignissimos. Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+
+    <!-- Services -->
+    <h1 id="col3">Services</h1>
+
+    <div id="servicessub">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Magni deleniti laboriosam accusamus. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Ducimus, laborum.
+        </p>
+    </div>
+
+    <!-- Data -->
+    <h1 id="col4">Data</h1>
+
+    <div id="datasub">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus nemo quasi labore. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Eveniet, reiciendis.
+        </p>
+    </div>
+
+</div>
+
+<script>
+
+$(document).ready(function(){
+
+    $("#col1").click(function(){
+
+        $("#productsub").slideUp(500);
+        $("#servicessub").slideUp(500);
+        $("#datasub").slideUp(500);
+
+        $("#aboutsub").slideToggle(500).css({
+            "background":"yellow",
+            "color":"green",
+            "width":"80%",
+            "margin":"auto"
+        });
+
+    });
+
+    $("#col2").click(function(){
+
+        $("#aboutsub").slideUp(500);
+        $("#servicessub").slideUp(500);
+        $("#datasub").slideUp(500);
+
+        $("#productsub").slideToggle(500).css({
+            "background":"brown",
+            "color":"white",
+            "width":"80%",
+            "margin":"auto"
+        });
+
+    });
+
+    $("#col3").click(function(){
+
+        $("#aboutsub").slideUp(500);
+        $("#productsub").slideUp(500);
+        $("#datasub").slideUp(500);
+
+        $("#servicessub").slideToggle(500).css({
+            "background":"teal",
+            "color":"white",
+            "width":"80%",
+            "margin":"auto"
+        });
+
+    });
+
+    $("#col4").click(function(){
+
+        $("#aboutsub").slideUp(500);
+        $("#productsub").slideUp(500);
+        $("#servicessub").slideUp(500);
+
+        $("#datasub").slideToggle(500).css({
+            "background":"orange",
+            "color":"black",
+            "width":"80%",
+            "margin":"auto"
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

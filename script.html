@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Menu</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+    <style>
+        body {
+            background: rgb(175, 108, 217);
+            color: rgb(50, 0, 85);
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        li {
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <ol>
+        <div style="background-color: aliceblue;width: 40px;">
+        Home
+</div>
+        <!-- Project -->
+        <li id="Project">
+            Project
+            <ol>
+                <li>Project 1</li>
+                <li>Project 2</li>
+                <li>Project 3</li>
+                <li>Project 4</li>
+            </ol>
+        </li>
+
+        <!-- Practice -->
+        <li id="practice">
+            Practice
+            <ol>
+                <li>HTML</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>Bootstrap</li>
+            </ol>
+        </li>
+
+        <!-- Social -->
+        <li id="Social">
+            Social
+            <ol>
+                <li>YouTube</li>
+                <li>Instagram</li>
+                <li>Facebook</li>
+                <li>Twitter</li>
+            </ol>
+        </li>
+
+    </ol>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            // Project
+            $("#Project").click(function () {
+                $("#Project > ol").toggle(500);
+            });
+
+
+            // Practice
+            $("#practice").click(function () {
+                $("#practice > ol").toggle(500);
+            });
+
+
+            // Social
+            $("#Social").click(function () {
+                $("#Social > ol").toggle(500);
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
