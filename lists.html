@@ -1,52 +1,362 @@
-<style>
-    body {
-        background-color: lightpink;
-        font-family: Arial;
-        text-align: center;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    .lists {
-        background-color: pink;
-        width: 60%;
-        margin: 40px auto;
-        padding: 20px;
-        border-radius: 10px;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h1 {
-        color: darkred;
-    }
+    <title>Student Dashboard</title>
 
-    h2 {
-        color: red;
-    }
+    <style>
 
-    ul {
-        text-align: left;
-        padding-left: 20px;
-    }
+        /* ---------- BODY ---------- */
 
-    li {
-        background-color: #ffe6ea;
-        margin: 8px 0;
-        padding: 8px;
-        border-radius: 5px;
-    }
+        body {
+            margin: 0;
+            background-color: #fff7f8;
+            font-family: Arial, sans-serif;
+            color: #4a3035;
+        }
 
-    li:hover {
-        background-color: #ffb3c1;
-    }
-</style>
 
-<div class="lists">
-    <h1>My Lists Practice</h1>
+        /* ---------- MAIN BOX ---------- */
 
-    <h2>Shopping List</h2>
-    <ul>
-        <li>Notebook - Rs 50</li>
-        <li>Pen - Rs 10</li>
-        <li>Pencil - Rs 5</li>
-        <li>Eraser - Rs 8</li>
-        <li>Bag - Rs 500</li>
-    </ul>
-</div>
+        .box {
+            background-color: white;
+            padding: 30px;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 1000px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(120, 50, 70, 0.10);
+        }
+
+
+        /* ---------- HEADER ---------- */
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: #7d3f50;
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #96747c;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+
+        /* ---------- BUTTON ---------- */
+
+        .button {
+            background-color: #d98b9d;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background-color: #b96d80;
+        }
+
+
+        /* ---------- TABLE ---------- */
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+
+        /* ---------- TABLE HEADER ---------- */
+
+        th {
+            background-color: #f2c6d0;
+            color: #5e3540;
+            padding: 14px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+
+        /* ---------- TABLE DATA ---------- */
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #f1dce1;
+            font-size: 14px;
+        }
+
+
+        /* ---------- TABLE ROW ---------- */
+
+        tr {
+            background-color: #fffafb;
+        }
+
+        tr:hover {
+            background-color: #fff0f3;
+        }
+
+
+        /* ---------- STUDENT NAME ---------- */
+
+        .student-name {
+            font-weight: bold;
+            color: #7d3f50;
+        }
+
+
+        /* ---------- MARKS ---------- */
+
+        .marks {
+            font-weight: bold;
+        }
+
+
+        /* ---------- STATUS ---------- */
+
+        .pass {
+            background-color: #e5f4ea;
+            color: #39704a;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        .footer {
+            margin-top: 20px;
+            color: #96747c;
+            font-size: 13px;
+            text-align: right;
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 700px) {
+
+            .box {
+                width: 85%;
+                padding: 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            th,
+            td {
+                padding: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="box">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <div>
+                <h1>Student Performance</h1>
+
+                <p class="subtitle">
+                    Academic marks and performance overview
+                </p>
+            </div>
+
+            <a href="#" class="button">+ Add Student</a>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="table-container">
+
+            <table>
+
+                <tr>
+                    <th>Student Name</th>
+                    <th>Class</th>
+                    <th>Maths</th>
+                    <th>Science</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+
+
+                <tr>
+
+                    <td class="student-name">
+                        John
+                    </td>
+
+                    <td>
+                        10A
+                    </td>
+
+                    <td class="marks">
+                        85
+                    </td>
+
+                    <td class="marks">
+                        78
+                    </td>
+
+                    <td class="marks">
+                        163
+                    </td>
+
+                    <td>
+                        <span class="pass">
+                            Passed
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td class="student-name">
+                        Mary
+                    </td>
+
+                    <td>
+                        10B
+                    </td>
+
+                    <td class="marks">
+                        92
+                    </td>
+
+                    <td class="marks">
+                        88
+                    </td>
+
+                    <td class="marks">
+                        180
+                    </td>
+
+                    <td>
+                        <span class="pass">
+                            Passed
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td class="student-name">
+                        David
+                    </td>
+
+                    <td>
+                        10A
+                    </td>
+
+                    <td class="marks">
+                        76
+                    </td>
+
+                    <td class="marks">
+                        82
+                    </td>
+
+                    <td class="marks">
+                        158
+                    </td>
+
+                    <td>
+                        <span class="pass">
+                            Passed
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td class="student-name">
+                        Sophia
+                    </td>
+
+                    <td>
+                        10B
+                    </td>
+
+                    <td class="marks">
+                        89
+                    </td>
+
+                    <td class="marks">
+                        94
+                    </td>
+
+                    <td class="marks">
+                        183
+                    </td>
+
+                    <td>
+                        <span class="pass">
+                            Passed
+                        </span>
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+            Showing 4 students
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
