@@ -1,207 +1,1043 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>html</title>
+
+    <title>Vaishali Portfolio</title>
+
+    <style>
+
+        /* ---------- BODY ---------- */
+
+        body {
+            margin: 0;
+            background-color: #fffaf5;
+            font-family: Arial, sans-serif;
+            color: #222;
+            scroll-behavior: smooth;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        section { scroll-margin-top: 70px; }
+
+
+        /* ---------- HEADER ---------- */
+
+        header {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(23, 43, 77, 0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #172b4d;
+        }
+
+        nav a {
+            position: relative;
+            text-decoration: none;
+            color: #222;
+            margin-left: 30px;
+            font-size: 15px;
+            padding: 6px 0;
+            transition: color 0.3s;
+        }
+
+        /* underline slides in on hover */
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #8b1e2d;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.35s ease;
+        }
+
+        nav a:hover {
+            color: #8b1e2d;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+
+        /* ---------- HERO SECTION ---------- */
+
+        .hero {
+            height: 620px;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            background: white;
+            margin: 20px;
+            border-radius: 20px;
+        }
+
+
+        /* ---------- NAME IN BACKGROUND ---------- */
+
+        .background-name {
+            position: absolute;
+
+            top: 70px;
+            left: 0;
+            right: 0;
+
+            font-size: 130px;
+            font-weight: bold;
+            letter-spacing: -4px;
+
+            color: #172b4d;
+
+            z-index: 1;
+            transition: transform 0.2s ease-out;
+        }
+
+        .background-name span {
+            color: #8b1e2d;
+            font-size: 50px;
+            vertical-align: top;
+        }
+
+
+        /* ---------- YOUR IMAGE ---------- */
+
+        .profile-image {
+            position: absolute;
+
+            height: 800px;
+            width: auto;
+
+            left: 55%;
+            bottom: 0;
+
+            transform: translateX(-50%);
+
+            z-index: 2;
+            transition: transform 0.2s ease-out;
+            filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.18));
+        }
+
+
+        /* ---------- SMALL TEXT ---------- */
+
+        .side-text {
+            position: absolute;
+
+            left: 40px;
+            top: 150px;
+
+            width: 180px;
+
+            text-align: left;
+
+            font-size: 17px;
+            line-height: 1.5;
+
+            z-index: 3;
+        }
+
+
+        /* ---------- TITLE ---------- */
+
+        .title {
+            position: absolute;
+
+            bottom: 25px;
+
+            left: 0;
+            right: 0;
+
+            z-index: 3;
+        }
+
+        .title h2 {
+            margin: 0;
+
+            color: #570000;
+
+            font-size: 30px;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
+        }
+
+        .title p {
+            font-size: 18px;
+        }
+
+
+        /* ---------- SOCIAL ICONS ---------- */
+
+        .social {
+            position: absolute;
+            right: 40px;
+            bottom: 30px;
+            display: flex;
+            gap: 14px;
+            z-index: 4;
+        }
+
+        .social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #172b4d;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+        }
+
+        .social a:hover {
+            background: #8b1e2d;
+            transform: translateY(-6px) scale(1.1);
+            box-shadow: 0 10px 18px rgba(139, 30, 45, 0.35);
+        }
+
+
+        /* ---------- ABOUT ---------- */
+
+        .about {
+            padding: 80px 60px;
+            background-color: white;
+
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+
+        /* ABOUT IMAGE */
+
+        .about-image {
+            width: 300px;
+            height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+            box-shadow: 12px 12px 0 #8b1e2d;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .about-image:hover {
+            transform: translate(6px, 6px);
+            box-shadow: 4px 4px 0 #8b1e2d;
+        }
+
+
+        /* ABOUT TEXT */
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #8b1e2d;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 800px;
+        }
+
+
+        /* ABOUT NUMBERS */
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            border: 2px solid #172b4d;
+            border-radius: 12px;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 13px;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .stat b {
+            display: block;
+            font-size: 22px;
+        }
+
+        .stat:hover {
+            background: #172b4d;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+
+        /* ---------- SECTION HEADING ---------- */
+
+        .heading {
+            font-size: 44px;
+            color: #172b4d;
+            margin: 0 0 30px;
+            letter-spacing: -1px;
+        }
+
+
+        /* ---------- SKILLS ---------- */
+
+        .skills {
+            padding: 70px 60px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .skills-left { flex: 1; min-width: 280px; }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .chip {
+            background: white;
+            border: 2px solid #172b4d;
+            border-radius: 14px;
+            padding: 14px 22px;
+            font-size: 15px;
+            cursor: default;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+        }
+
+        .chip:hover {
+            background: #8b1e2d;
+            border-color: #8b1e2d;
+            color: white;
+            transform: translateY(-6px) rotate(-2deg);
+            box-shadow: 0 12px 20px rgba(139, 30, 45, 0.3);
+        }
+
+        .tools {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .tool {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background: #172b4d;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+
+        .tool:hover { transform: scale(1.2) rotate(6deg); }
+
+        .certificate {
+            width: 300px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .certificate:hover {
+            transform: perspective(600px) rotateY(-8deg) rotateX(4deg) scale(1.04);
+            box-shadow: 20px 25px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .certificate h3 { color: #172b4d; margin: 0 0 8px; }
+
+
+        /* ---------- WORK ---------- */
+
+        .work {
+            padding: 60px;
+        }
+
+        .work h2 {
+            color: #8b1e2d;
+        }
+
+        .projects {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            position: relative;
+            width: 250px;
+            background-color: #6d1a26;
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* light shine sweeps across on hover */
+        .box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.7s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .box:hover::before {
+            left: 150%;
+        }
+
+        .box:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 35px rgba(109, 26, 38, 0.4);
+        }
+
+        .box .img-wrap {
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .box img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .box:hover img {
+            transform: scale(1.12);
+        }
+
+        .box p {
+            text-align: center;
+        }
+
+
+        /* ---------- CASE STUDY ---------- */
+
+        .case {
+            padding: 60px;
+            background: white;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .case-text {
+            background: #172b4d;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            line-height: 1.7;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .case-text:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(23, 43, 77, 0.35);
+        }
+
+        .case-text h3 { margin-top: 0; color: #ffb3bd; }
+
+        .case-image {
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s ease;
+        }
+
+        .case-image:hover img { transform: scale(1.08); }
+
+
+        /* ---------- PHOTOGRAPHY / GALLERY ---------- */
+
+        .gallery {
+            padding: 60px;
+        }
+
+        .gallery-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-row figure {
+            margin: 0;
+            width: 220px;
+            overflow: hidden;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .gallery-row img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(100%);
+            transition: filter 0.5s, transform 0.6s;
+        }
+
+        .gallery-row figure:hover {
+            transform: translateY(-8px) rotate(1deg);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-row figure:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.08);
+        }
+
+        .gallery-row figcaption {
+            padding: 10px 12px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+
+        /* ---------- CONTACT ---------- */
+
+        .contact {
+            padding: 70px 60px;
+            background: #172b4d;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 44px;
+            margin: 0 0 10px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 38px;
+            background: #8b1e2d;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: white;
+            color: #8b1e2d;
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(255, 255, 255, 0.25);
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media screen and (max-width: 700px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+
+            .hero {
+                margin: 10px;
+                height: 480px;
+            }
+
+            .background-name {
+                font-size: 60px;
+                top: 100px;
+            }
+
+            .background-name span {
+                font-size: 24px;
+            }
+
+            .profile-image {
+                height: 380px;
+                width: auto;
+            }
+
+            .side-text {
+                display: none;
+            }
+
+            .social {
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .social a {
+                width: 34px;
+                height: 34px;
+            }
+
+
+            /* ABOUT MOBILE */
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 25px;
+            }
+
+            .about-image {
+                width: 250px;
+                height: 300px;
+            }
+
+            .about-text p {
+                text-align: center;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+
+            .skills, .work, .case, .gallery, .contact {
+                padding: 40px 25px;
+            }
+
+            .heading, .contact h2 {
+                font-size: 32px;
+            }
+
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificate {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .box {
+                width: 100%;
+            }
+
+            .gallery-row figure {
+                width: calc(50% - 10px);
+            }
+
+        }
+
+        /* respect people who turn animations off */
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; }
+        }
+
+    </style>
 </head>
-<style>
-  body{background:linear-gradient(rgb(255, 245, 245),rgb(218, 151, 151) ) ;}
-    header{background:linear-gradient(rgb(81, 13, 13),rgb(84, 5, 18));    }
-    header div{  position: absolute;
-    top: 5px; 
-    right: 10px; }
-
-    img {
-            width: 400px;
-            height:400px;
-            border-radius: 50%; /* makes circle */
-            float: right;display: block;
-    margin: 1px auto;
-    object-fit: cover;padding-bottom: 10;}
-    body{background-color: rgba(250, 233, 222, 0.985);}
-
-    p{font-size: 18px;}
-
-   
-    
-    .about{font-family: Georgia, 'Times New Roman', Times, serif; font-size: 10; text-align: center;}
 
 
-    #pre{font-size:30px ;padding-top:50px ;text-align:left;font-family:'Times New Roman', Times, serif; } 
-
-    .box {
-        width: 250px;
-        height: 350px;
-        background-color: #6d1a26;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        cursor: pointer;
-        transition: 0.3s;
-        text-decoration: none;
-        color: white;
-        padding-left:20px ;
-        padding-right: 0px;
-    }
-.box img{fill: black;}
-    .box {
-        width: 250px;
-        height: 350px;
-        background-color: #6d1a26;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-        font-size: 20px;
-        cursor: pointer;
-        transition: 0.3s;
-        text-decoration: none;
-        color: white;
-        padding: 20px;
-    }
-    .projects-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
-        align-items: flex-start;
-    }
-
-    .box img{
-        width: 100%;
-        height: 260px;
-        border-radius: 12px;
-        object-fit: cover;
-        float: none;
-        margin: 0;
-        padding-bottom: 0;
-    }
-
-    .box p {
-        margin: 0;
-    }
-    .homee {
-    font-size: 22px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-}
-nav a {
-    color: white;              /* makes text white */
-    text-decoration: none;     /* removes underline */
-    margin-left: 20px;}
-  
-</style>
 <body>
-    
-    <header >
-        <div class="homee">Portfolio</div>
-    
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            VAISHALI
+        </div>
+
         <nav>
-         <a href="#Home">Home</a>
-        <a href="#About">About</a>
-        <a href="workof.html">Practice work</a>
-        <a href="#">contact </a>
-        
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+           <a href="workof.html">Practice work</a>
+
+            <a href="#case"> Case study</a>
+
+            <a href="#contact">Contact</a>
+
         </nav>
-
-
-      
 
     </header>
 
 
-   
-    
-      <div style="padding-top: 60px;"></div>
-      <br></br>
 
-<main style="padding-left: 30px;font-size: 30px;">
+    <!-- HERO -->
 
-    <div  id="Home"></div>
-    <p >
-        <IMG SRC="passport.png" >
+    <section class="hero" id="home">
 
-           <div> <h3>
-            Hey I'm <br>Vaishali
-            </h3>
+
+        <!-- NAME BEHIND IMAGE -->
+
+        <div class="background-name" id="bgName">
+            VAISHALI<span>✱</span>
+        </div>
+
+
+        <!-- SMALL TEXT -->
+
+        <div class="side-text">
+
+            Creative designer
+            creating visual
+            experiences through
+            design.
+
+        </div>
+
+
+        <!-- YOUR MAIN IMAGE -->
+
+        <img
+            src="me.png"
+            class="profile-image"
+            id="profileImg"
+            alt="Vaishali"
+        >
+
+
+        <!-- TITLE -->
+
+        <div class="title">
+
+            <h2>
+                UI/UX & GRAPHIC DESIGNER
+            </h2>
+
+            <p>
+                Great design should feel invisible.
+            </p>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="social">
+            <a href="#">YT</a>
+            <a href="#">IG</a>
+            <a href="#">X</a>
+            <a href="#">in</a>
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+
+        <!-- LEFT SIDE IMAGE -->
+
+        <img
+            src="methi.jpg"
+            class="about-image"
+            alt="Vaishali About"
+        >
+
+
+        <!-- RIGHT SIDE TEXT -->
+
+        <div class="about-text">
+
+            <h2>
+                WHO AM I
+            </h2>
+
+            <p>
+                Hi, I'm Vaishali — a passionate UI/UX and
+                Graphic Designer who loves creating visually
+                appealing and user-friendly designs.
+            </p>
+
+            <p>
+                I enjoy working on website designs, posters,
+                illustrations, branding and digital experiences.
+                I am continuously learning and improving my
+                design skills.
+            </p>
+
+            <div class="stats">
+                <div class="stat"><b>10+</b>Projects</div>
+                <div class="stat"><b>3</b>Design fields</div>
+                <div class="stat"><b>1yr+</b>Learning</div>
             </div>
-        
-            <h1 
-            style="color: rgb(130, 5, 5); font-size: 70px;" > 
-                UI/UX GRAPHIC DESIGNER
-            </h1>
-             <div>
-        <p style="font-size: 45px;padding-top:
-        0px;">Great design should feel invisible.</p>
-    
-</div>
 
-<div></div>
-        
-       <div id="pre">
-         
-            
-            <h2> (About me ) </h2>
+        </div>
 
 
-       </div>
-              <br>
+    </section>
 
- <div  id="About" class="about" ></div>
-           <p style="font-size: 20px;  text-align: left;" >
-       
-            Hi, I’m <span>Vaishali</span> — a passionate UI/UX and Graphic Designer 
-       
-            who loves creating visually appealing and user-friendly designs.
-      </p>
 
-      <p  style="font-size: 20px;text-align:left;">
-          I focus on designing modern, clean, and engaging digital experiences 
-         that solve real user problems. From wireframes to final visuals, 
-         I enjoy every step of the design process.
-      </p>
 
-      <p  style="font-size: 20px; text-align:left;">
-         I have experience in creating website designs, posters, illustrations, 
-         and branding elements. I’m always learning  new trends and improving my skills.
-      </p>
+    <!-- SKILLS -->
 
-      </div>
-      <br></div>
-      
+    <section class="skills" id="skills">
 
-<div id="Projects"  class="projects"></div>
+        <div class="skills-left">
 
-  <h2 style="font-size: 25px;">My sample Work images</h2>
+            <h2 class="heading">Skills & Tools</h2>
 
-  <div class="projects-grid">
-    <div class="box">
-      <img src="BBLUNT.png" alt="Poster design">
-      <p>Poster</p>
-    </div>
+            <div class="chips">
+                <div class="chip">UI/UX Design</div>
+                <div class="chip">Poster Design</div>
+                <div class="chip">Illustration</div>
+                <div class="chip">Branding</div>
+                <div class="chip">Website Design</div>
+            </div>
 
-    <div class="box">
-      <img src="spider man comic page with vorder.jpg" alt="Illustration design">
-      <p>Illustration</p>
-    </div>
+            <div class="tools">
+                <div class="tool">Fg</div>
+                <div class="tool">Ps</div>
+                <div class="tool">Ai</div>
+                <div class="tool">Ca</div>
+            </div>
 
-    <div class="box">
-      <img src="PLATERA2.0.png" alt="Website UI design">
-      <p>Website UI</p>
-    </div>
-  </div>
-      <br></br>
-   </section>
-    
-<article>
-    
-</article>
-</main>
+        </div>
 
+        <div class="certificate">
+            <h3>Certificate</h3>
+            <p>UI/UX Designer/master in After Effect with Gen AI</p>
+        </div>
+
+    </section>
+
+
+
+    <!-- WORK -->
+
+    <section class="work" id="work">
+
+        <h2 class="heading" style="color:#8b1e2d;">
+            My Practice Work
+        </h2>
+
+
+        <div class="projects">
+
+
+            <div class="box">
+
+                <div class="img-wrap">
+                    <img
+                        src="images.html/BBLUNT.png"
+                        alt="Poster"
+                    >
+                </div>
+
+                <p>
+                    Poster Design
+                </p>
+
+            </div>
+
+
+
+            <div class="box">
+
+                <div class="img-wrap">
+                    <img
+                        src="images.html/spider man comic page with vorder.jpg"
+                        alt="Illustration"
+                    >
+                </div>
+
+                <p>
+                    Illustration
+                </p>
+
+            </div>
+
+
+
+            <div class="box">
+
+                <div class="img-wrap">
+                    <img
+                        src="images.html/PLATERA2.0.png"
+                        alt="Website UI"
+                    >
+                </div>
+
+                <p>
+                    Website UI
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CASE STUDY -->
+
+    <section class="case" id="case">
+
+        <h2 class="heading">Case Study</h2>
+
+        <div class="case-grid">
+
+            <div class="case-text">
+                <h3>PLATERA 2.0</h3>
+                <p>
+                    A website UI project. Write here what problem you
+                    solved, what your idea was, and how the final
+                    design turned out.
+                </p>
+            </div>
+
+            <div class="case-image">
+                <img
+                    src="images.html/PLATERA2.0.png"
+                    alt="Case study"
+                >
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- GALLERY -->
+
+    <section class="gallery" id="gallery">
+
+        <h2 class="heading">More Designs</h2>
+
+        <div class="gallery-row">
+
+            <figure>
+                <img src="images.html/BBLUNT.png" alt="Design 1">
+                <figcaption>Poster</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images.html/spider man comic page with vorder.jpg" alt="Design 2">
+                <figcaption>Comic page</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images.html/PLATERA2.0.png" alt="Design 3">
+                <figcaption>Website</figcaption>
+            </figure>
+
+            <figure>
+                <img src="methi.jpg" alt="Design 4">
+                <figcaption>Photo</figcaption>
+            </figure>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <h2>Let's work together</h2>
+
+        <p>Have a project in mind? Send me a message.</p>
+
+        <a href="mailto:youremail@gmail.com" class="contact-btn">
+            Email me
+        </a>
+
+    </section>
+
+
+
+    <!-- HERO MOUSE EFFECT -->
+
+    <script>
+
+        const hero = document.querySelector(".hero");
+        const img = document.getElementById("profileImg");
+        const name = document.getElementById("bgName");
+
+        hero.addEventListener("mousemove", function (e) {
+
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+
+            img.style.transform = "translateX(calc(-50% + " + (x * 12) + "px))";
+            name.style.transform = "translateX(" + (x * -20) + "px)";
+
+        });
+
+        hero.addEventListener("mouseleave", function () {
+
+            img.style.transform = "translateX(-50%)";
+            name.style.transform = "translateX(0)";
+
+        });
+
+    </script>
 
 </body>
+
 </html>
